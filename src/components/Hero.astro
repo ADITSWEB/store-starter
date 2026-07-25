@@ -1,7 +1,9 @@
 ---
 import Container from "./Container.astro";
-import { store } from "../data/store";
 import { Button } from "./ui/button";
+import { StoreService } from "@/backend/StoreService";
+
+const store = await StoreService.getStore();
 ---
 
 <section class="py-16">
