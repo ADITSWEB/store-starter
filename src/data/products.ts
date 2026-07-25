@@ -1,0 +1,47 @@
+import type { Product } from "../types/product";
+
+export const featuredProducts: Product[] = [
+  {
+    id: "P001",
+    name: "Handcrafted Wooden Bowl",
+    price: 799,
+    images: [{
+      url: "/store-starter/images/store/products/P0001/P0001.jpg",
+      alt: "Handcrafted Wooden Bowl",
+      order: 1
+    }
+    ],
+    badge: "New"
+  },
+  {
+    id: "P005",
+    name: "Decorative Candle",
+    price: 349,
+    images: [{
+      url: "/store-starter/images/store/products/P0005/P0005.jpg",
+      alt: "Decorative Candle",
+      order: 1
+    }
+    ],
+  },
+  {
+    id: "P0009",
+    name: "Ceramic Vase",
+    price: 1299,
+    images: [{ url: "/store-starter/images/store/products/P0009/P0009.jpg",
+      alt: "Ceramic Vase",
+      order: 1
+    }],
+    badge: "Popular"
+  },
+  {
+    id: "P0010",
+    name: "Ceramic Vase",
+    price: 654,
+    images: [{ url: "/store-starter/images/store/products/P0010/P0010.jpg",
+      alt: "Ceramic Vase",
+      order: 5
+    }],
+    badge: "Hot Selling"
+  }
+];

@@ -1,0 +1,19 @@
+---
+import AppLayout from "@/layouts/AppLayout.astro"
+import { Button, buttonVariants } from "../../components/ui/button"
+import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "../../components/ui/card"
+---
+
+<AppLayout>
+<h1> Components Showcase </h1>
+<h2>Buttons</h2>
+<div class=""grid grid-cols-4">
+<Button>Button</Button>
+<Button variant="outline" as="button" type="button">Save</Button>
+<Button variant="link" href="/docs/">Docs</Button>
+<Button variant="ghost" as="label" for="file-upload">Upload</Button>
+<Button variant="destructive" as="label" for="file-upload">Upload</Button>
+<Button variant="secondary" as="label" for="file-upload">Upload</Button>
+<Button variant="primary" as="label" for="file-upload">Upload</Button>
+</div>
+</AppLayout>

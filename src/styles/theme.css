@@ -1,0 +1,27 @@
+@theme {
+  --color-primary:  #059669; /* #C77398 ; */ /* #059669; */
+  --color-secondary: #d97706;
+  --color-accent: #e11d48;
+
+  --color-background: #ffffff;
+  --color-surface: #f8fafc;
+
+  --color-text: #111827;
+
+  --color-foreground: #111827;
+
+  --color-muted: #f3f4f6;
+  --color-muted-foreground: #6b7280;
+
+  --color-border: #e5e7eb;
+
+  --color-destructive: #dc2626;
+  --color-destructive-foreground: #ffffff;
+
+  --color-ring: #059669;
+
+  /* Typography */
+  --font-heading: "Poppins", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+}

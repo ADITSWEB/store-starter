@@ -1,0 +1,55 @@
+---
+import Container from "../Container.astro";
+import ProductCard from "../store/ProductCard.astro";
+import { featuredProducts } from "../../data/products";
+import { Button } from "../ui/button";
+import { Card } from "../ui/card";
+---
+
+<section class="py-20">
+
+    <Container>
+
+        <div class="mb-10 flex items-center justify-between">
+
+            <div>
+
+                <h2 class="text-3xl font-bold">
+                    Featured Products
+                </h2>
+
+                <p class="mt-2 text-gray-500">
+                    Discover our latest handcrafted creations.
+                </p>
+
+            </div>
+
+            <Button variant="outline">
+                <a href="#" >
+                    View All →
+                </a>
+            </Button>
+
+        </div>
+
+        <div
+            class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4"
+        >
+
+            {featuredProducts.length > 0 ?
+                featuredProducts.map(product => (
+                    <ProductCard product={product}  />
+                )) :
+                <Card class="p-8 text-center">
+                    <p class="text-muted-foreground">
+                        New products coming soon.
+                    </p>
+                </Card>
+            }
+
+        </div>
+
+    </Container>
+
+
+</section>
