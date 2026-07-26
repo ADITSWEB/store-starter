@@ -14,12 +14,12 @@ export const featuredProducts: Product[] = [
     badge: "New"
   },
   {
-    id: "P005",
-    name: "Decorative Candle",
+    id: "P006",
+    name: "Anklet",
     price: 349,
     images: [{
-      url: "/store-starter/images/store/products/P0005/P0005.jpg",
-      alt: "Decorative Candle",
+      url: "/store-starter/images/store/products/P0006/P0006.jpg",
+      alt: "Anklet",
       order: 1
     }
     ],

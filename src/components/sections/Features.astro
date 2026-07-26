@@ -10,9 +10,12 @@ const featuredProducts = await ProductService.getFeatured();
     <Section
     title="Featured Products"
     subtitle="Discover our latest handcrafted creations."
+    class="bg-linear-to-tr from-indigo-200 from-10% via-purple-200 via-40% to-pink-200 to-90%"
      >
+    <!-- The purple middle point stays compressed between 40% and 60% -->
+
     <div
-        class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4"
+        class="grid w-full grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4"
     >
     {featuredProducts.length > 0 ?
         featuredProducts.map(product => (

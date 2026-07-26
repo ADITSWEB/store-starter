@@ -22,15 +22,15 @@ const image =  product.images?.[0]?.url ??
 ---
 
 <Card
-  class="group overflow-hidden transition-all duration-200 hover:-translate-y-1 hover:shadow-md"
+  class="group gap-0 py-0 overflow-hidden transition-all duration-200 hover:-translate-y-1 hover:shadow-md"
 >
 
-  <div class="aspect-square overflow-hidden bg-surface">
+  <div class="aspect-square w-full min-w-0 overflow-hidden bg-surface">
 
     <img
       src={image}
       alt={product.name}
-      class="h-full w-full object-cover transition duration-300 group-hover:scale-105"
+      class="size-full object-cover transition duration-300 group-hover:scale-105"
     />
 
   </div>

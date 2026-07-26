@@ -12,9 +12,9 @@ import { testimonials } from "@/data/testimonials";
 <Section
     title="What Our Customers Say"
     subtitle="Kind words from happy customers."
+    class="bg-linear-to-bl from-indigo-200 from-10% via-purple-200 via-40% to-pink-200 to-90%"
 >
-
-    <div class="grid gap-6 md:grid-cols-3">
+    <div class="grid w-full grid-cols-1 gap-6 md:grid-cols-3">
 
         {
             testimonials.map((testimonial) => (
@@ -24,7 +24,7 @@ import { testimonials } from "@/data/testimonials";
                             {"★".repeat(testimonial.rating)}
                         </div>
 
-                        <p class="mb-6 grow text-muted-foreground italic">
+                        <p class="mb-6 grow wrap-break-words text-muted-foreground italic">
                             "{testimonial.comment}"
                         </p>
                         <div>
