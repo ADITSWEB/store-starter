@@ -1,0 +1,37 @@
+---
+import type { Product } from "@/types/product";
+import ProductListItem from "./ProductListItem.astro";
+
+const densityOptions = {
+  compact: {
+    padding: "p-2",
+  },
+  normal: {
+    padding: "p-4",
+  },
+  comfortable: {
+    padding: "p-6",
+  },
+} as const;
+
+type Density = keyof typeof densityOptions;
+
+interface Props {
+  products: Product[];
+  density?: Density;
+}
+
+const { products, density = "normal" } = Astro.props;
+
+const ui = densityOptions[density];
+---
+
+<div class="space-y-4">
+
+{
+products.map(product => (
+  <ProductListItem product={product} />
+))
+}
+
+</div>

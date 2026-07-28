@@ -1,8 +1,9 @@
 import type { Product } from "../types/product";
 
-export const featuredProducts: Product[] = [
+
+export const products: Product[] = [
   {
-    id: "P001",
+    id: "P0001",
     name: "Handcrafted Wooden Bowl",
     price: 799,
     images: [{
@@ -14,7 +15,7 @@ export const featuredProducts: Product[] = [
     badge: "New"
   },
   {
-    id: "P006",
+    id: "P0006",
     name: "Anklet",
     price: 349,
     images: [{
@@ -45,3 +46,5 @@ export const featuredProducts: Product[] = [
     badge: "Hot Selling"
   }
 ];
+
+export const featuredProducts = [0,1,2,3].map(index => products[index]) as Product[];

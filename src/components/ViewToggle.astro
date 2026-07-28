@@ -1,0 +1,28 @@
+---
+import { LayoutGrid, Rows3 } from "@lucide/astro";
+import { Button } from "@/components/ui/button";
+---
+
+<div class="flex gap-2">
+
+    <Button
+        type="button"
+        variant="outline"
+        x-on:click="setView('grid')"
+        :aria-pressed="view === 'grid'"
+        :class="view === 'grid' && 'bg-primary text-primary-foreground hover:bg-primary/80 hover:text-primary-foreground'"
+    >
+        <LayoutGrid class="size-4"/>
+    </Button>
+
+    <Button
+        type="button"
+        variant="outline"
+        x-on:click="setView('list')"
+        :aria-pressed="view === 'list'"
+        :class="view === 'list' && 'bg-primary text-primary-foreground hover:bg-primary/80 hover:text-primary-foreground'"
+    >
+        <Rows3 class="size-4"/>
+    </Button>
+
+</div>

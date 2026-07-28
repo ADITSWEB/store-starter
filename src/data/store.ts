@@ -7,8 +7,11 @@ export const Store: StoreType  = {
     "Get your hands on the most glamorous and exciting accessories", 
 
   whatsapp: "https://wa.me/919999999999",
-  heroImage: "/store-starter/images/hero.png",
-  logo: "/store-starter/images/chiic.jpg",
+  hero:  {url: "/store-starter/images/hero.png", alt: "Chiic Glow Hero Image"},
+  logo: {
+    url: "/store-starter/images/chiic.jpg",
+    alt: "Chiic Glow Logo",
+  },
   email: "hello@example.com",
   phone: "+919999999999",
   city: "Pune, Maharashtra",

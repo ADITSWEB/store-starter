@@ -1,3 +1,7 @@
+export interface StoreImage {
+    url?: string;
+    alt?: string;
+}
 export interface Store {
     name: string;
     tagline: string;
@@ -6,8 +10,8 @@ export interface Store {
     phone?: string;
     city?: string;
     instagram?: string;
-    heroImage?: string;
-    logo?: string;
+    logo?: StoreImage;
+    hero?: StoreImage;
     whatsapp?: string;
     address?: string;
 }

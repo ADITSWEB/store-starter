@@ -4,6 +4,8 @@ import { Button } from "./ui/button";
 import { StoreService } from "@/backend/StoreService";
 
 const store = await StoreService.getStore();
+const heroImage = store.hero?.url ?? '#';
+const basePath = import.meta.env.APP_BASE_PATH;
 ---
 
 <section class="py-16">
@@ -26,7 +28,7 @@ const store = await StoreService.getStore();
 
           <Button>
           <a
-            href="#products"
+            href={basePath + "/products"}
           >
             Browse Products
           </a></Button>
@@ -48,7 +50,7 @@ const store = await StoreService.getStore();
       <div>
 
         <img
-          src={store.heroImage}
+          src={heroImage}
           alt={store.name}
           class="w-full rounded-3xl shadow-xl"
         />

@@ -1,0 +1,63 @@
+---
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import CategoryChip from "@/components/category/CategoryChip.astro";
+import type { Product } from "@/types/product";
+
+interface Props {
+  product: Product;
+}
+
+const { product } = Astro.props;
+
+const image  = product.images?.[0]?.url ?? '#';
+---
+<Card>
+
+<CardContent class="flex gap-4 p-4">
+
+    <img
+        src={image}
+        alt={product.name}
+        class="h-28 w-28 rounded-xl object-cover shrink-0"
+    />
+
+<div class="flex flex-1 flex-col">
+
+<div class="flex items-start justify-between gap-4">
+
+<div>
+
+<h3 class="font-heading text-lg font-semibold"> {product.name} </h3>
+
+{product.category && <CategoryChip category={product.category?.name ?? ""} />}
+
+</div>
+
+{ product.badge && <CategoryChip category={product.badge} />}
+</div>
+
+<p class="mt-auto text-lg font-semibold text-primary">
+
+₹{product.price}
+
+</p>
+
+<div class="mt-4">
+
+<Button
+                    as="a"
+                    href={`/products/${product.id}`}
+                >
+
+View Details
+
+</Button>
+
+</div>
+
+</div>
+
+</CardContent>
+
+</Card>

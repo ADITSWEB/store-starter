@@ -1,0 +1,76 @@
+---
+import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+
+import CategoryChip from "../category/CategoryChip.astro";
+
+import {
+    createProductCardConfigWithPreset
+} from "@/config/productCardConfig";
+
+const {
+
+    product,
+    preset,
+    priority=false
+} = Astro.props;
+
+const basePath = import.meta.env.APP_BASE_PATH;
+const ui =
+    createProductCardConfigWithPreset(preset)
+---
+
+<Card class={ui.card}>
+    <div class={ui.imageWrapper}>
+        <img
+            src={product.images[0]?.url}
+            alt={product.images[0]?.alt ?? product.name}
+            class={ui.image}
+            loading={priority ? "eager" : "lazy"}
+        />
+    </div>
+    <div class={`flex flex-col flex-1 ${ui.spacing}`}>
+        {
+            ui.showCategory &&
+            product.category &&
+            (
+                <CategoryChip category={product.category} />
+            )
+        }
+
+        <h3 class={ui.title}>
+            {product.name}
+        </h3>
+
+        {
+            ui.showDescription &&
+            (
+                <p class={ui.description}>
+                    {product.shortDescription}
+                </p>
+            )
+        }
+
+        {
+            ui.showPrice &&
+            (
+                <p class={ui.price}>
+                    ₹ {product.price}
+                </p>
+            )
+        }
+
+        {
+            ui.showActions &&
+            (
+              <a href={`${basePath}/products/${product.id}`}>
+                <Button
+                    size={ui.buttonSize}
+                >
+                    View Details
+                </Button>
+                </a>
+            )
+        }
+    </div>
+</Card>

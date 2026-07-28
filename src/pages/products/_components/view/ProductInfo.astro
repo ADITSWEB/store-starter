@@ -1,0 +1,129 @@
+---
+import type { Product } from '@/types/product';
+import CategoryChip from "@/components/category/CategoryChip.astro";
+import { Button } from "@/components/ui/button";
+
+interface Props {
+  product: Product;
+}
+
+
+const { product } = Astro.props;
+---
+
+<div class="flex flex-col gap-6">
+
+  <!-- Category -->
+
+  {
+    product.category && (
+      <CategoryChip
+        category={product.category?.name}
+      />
+    )
+  }
+
+  <!-- Name -->
+
+  <div>
+
+    <h1
+      class="text-3xl font-heading font-bold text-foreground"
+    >
+      {product.name}
+    </h1>
+
+    {
+      product.shortDescription && (
+        <p
+          class="mt-3 text-muted-foreground"
+        >
+          {product.shortDescription}
+        </p>
+      )
+    }
+
+  </div>
+
+  <!-- Price -->
+
+  {
+    product.price && (
+      <div>
+
+        <p class="text-sm text-muted-foreground">
+          Price
+        </p>
+
+        <p
+          class="text-3xl font-bold text-primary"
+        >
+          ₹ {product.price}
+        </p>
+
+      </div>
+    )
+  }
+
+  <!-- Product Details -->
+
+  <dl class="grid grid-cols-[120px_1fr] gap-y-3 text-sm">
+
+    {
+      product.sku && (
+        <>
+          <dt class="text-muted-foreground">
+            SKU
+          </dt>
+
+          <dd>
+            {product.sku}
+          </dd>
+        </>
+      )
+    }
+
+    {
+      product.category?.name && (
+        <>
+          <dt class="text-muted-foreground">
+            Category
+          </dt>
+
+          <dd>
+            {product.category.name}
+          </dd>
+        </>
+      )
+    }
+
+    <dt class="text-muted-foreground">
+      Availability
+    </dt>
+
+    <dd class="text-green-600 font-medium">
+      In Stock
+    </dd>
+
+  </dl>
+
+  <!-- Actions -->
+
+  <div class="flex flex-wrap gap-3">
+
+    <Button>
+
+      Add to Cart
+
+    </Button>
+
+    <Button
+      variant="outline"
+    >
+
+      Enquire
+
+    </Button>
+
+  </div>
+</div>

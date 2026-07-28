@@ -1,0 +1,36 @@
+---
+import { Button } from "@/components/ui/button";
+
+interface Props {
+  category: string;
+  selected?: boolean;
+  count?: number;
+  href?: string;
+}
+
+const {
+  category,
+  selected = false,
+  count,
+  href = "#"
+} = Astro.props;
+---
+
+<Button
+  as="a"
+  href={href}
+  variant={selected ? "default" : "outline"}
+  class="rounded-full px-4"
+>
+
+  <span>{category}</span>
+
+  {
+    count !== undefined && (
+      <span class="ml-2 rounded-full bg-background/20 px-2 py-0.5 text-xs">
+        {count}
+      </span>
+    )
+  }
+
+</Button>

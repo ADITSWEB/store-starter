@@ -1,0 +1,42 @@
+---
+
+---
+<div class="space-y-4">
+  <div class="rounded-xl overflow-hidden">
+
+      <img
+          :src="selectedImage.url"
+          :alt="selectedImage.alt"
+          class="w-full aspect-square object-cover"
+      />
+
+  </div>
+
+  <div class="flex gap-3">
+
+      <template
+          x-for="(image,index) in images"
+          :key="image.url"
+      >
+
+          <button
+              @click="select(index)"
+              class="overflow-hidden rounded-lg border-2 transition"
+              x-bind:class="selectedIndex===index
+                  ? 'border-primary'
+                  : 'border-border hover:border-primary/40'"
+          >
+
+              <img
+                  :src="image.url"
+                  :alt="image.alt"
+                  class="size-20 object-cover"
+              />
+
+          </button>
+
+      </template>
+
+  </div>
+
+</div>

@@ -1,0 +1,22 @@
+---
+import AppLayout from "./AppLayout.astro";
+import PageHeader from "../components/PageHeader.astro";
+
+const {
+  title,
+  description,
+  breadcrumbs = [],
+  xdata,
+} = Astro.props;
+
+---
+
+<AppLayout>
+  <section class:list={["py-16", Astro.props.class]} x-data={xdata}>
+    <div class="mx-auto w-full min-w-0 max-w-7xl px-4">
+      <PageHeader title={title} description={description} breadcrumbs={breadcrumbs} />
+      <slot />
+    </div>
+  </section>
+</AppLayout>
+

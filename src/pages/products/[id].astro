@@ -1,0 +1,35 @@
+---
+import PageLayout from "@/layouts/PageLayout.astro";
+import ProductGallery from "./_components/view/ProductGallery.astro";
+import ProductInfo from "./_components/view/ProductInfo.astro";
+import RelatedProducts from "./_components/view/RelatedProducts.astro";
+import type { Product } from "../../types/product";
+import { ProductService } from "@/backend/ProductService";
+
+const { id } = Astro.params;
+export async function getStaticPaths() {
+  const products = await ProductService.getAll();
+  return products.map(product => ({
+    params: { id: product.id.toString() }
+  }));
+}
+const product = await ProductService.getById(id);
+if (!product) {
+  return Astro.redirect("/products");
+}
+---
+<PageLayout 
+  title={product.name?? 'Product'} description={product.shortDescription} 
+  breadcrumbs={[{ label: "Home", href: "/" }, { label: "Products", href: "/products" }, 
+  { label: product.name ?? 'Product', href: `/products/${id}` }]}
+  xdata={`productDetail(${JSON.stringify(product)})`}
+>
+
+  <div class="grid lg:grid-cols-2 gap-12">
+      <ProductGallery product={product} />
+      <ProductInfo product={product} />
+  </div>
+  <!-- <ProductDescription /> -->
+  <RelatedProducts products={[]}/>
+
+</PageLayout>

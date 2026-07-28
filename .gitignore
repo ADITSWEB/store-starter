@@ -21,3 +21,5 @@ node_modules/
 .astro/
 .dist/
 .DS_Store
+.pnpm-store/
+.npmrc

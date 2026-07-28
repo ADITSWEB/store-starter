@@ -1,0 +1,13 @@
+---
+import { CategoryService } from "@/backend/CategoryService";
+import ViewToggle from "@/components/ViewToggle.astro";
+import CategoryFilter from "./CategoryFilter.astro";
+
+const categories = await CategoryService.getAll();
+const selectedCategoryId = Astro.url.searchParams.get("category") ?? undefined;
+---
+
+<div class="mb-8 flex items-center justify-between">
+  <CategoryFilter categories={categories} selectedId={selectedCategoryId}/>
+  <ViewToggle />
+</div>

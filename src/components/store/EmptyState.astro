@@ -1,0 +1,22 @@
+---
+import Box from '@lucide/astro/icons/box';
+
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+<div class="flex flex-col items-center justify-center">
+  <div class="mb-4 text-center">
+    <div class="flex items-center justify-center">
+      <div class="size-12 rounded-full bg-muted p-2">
+        <Box size={24} />
+      </div>
+    </div>
+    <h2 class="text-2xl font-bold">{title}</h2>
+    <p class="text-sm text-muted-foreground">{description}</p>
+  </div>
+</div>
